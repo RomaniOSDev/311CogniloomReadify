@@ -1,0 +1,6 @@
+framework module Pods_311CogniloomReadify {
+  umbrella header "Pods-311CogniloomReadify-umbrella.h"
+
+  export *
+  module * { export * }
+}

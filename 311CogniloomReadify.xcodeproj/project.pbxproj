@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		041518EE3DC8C7E5F2FCDAA8 /* TrackedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D514BACD63816C2F9E3F8ACD /* TrackedWord.swift */; };
+		0478779DA4FE4A06B9785058 /* WordOrganizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF63730E7793ABE49A3DB07 /* WordOrganizerView.swift */; };
+		0EF9830CC39EE138CED4B0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935314D9E08AF292F3706660 /* Assets.xcassets */; };
+		205B547D9027016832D19DA9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356AE56E47FC8D20AA3DB1A /* MainTabView.swift */; };
+		269583C1E4916B483E601862 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF0A02BF10D28B55A43A04 /* LaunchScreen.storyboard */; };
+		29797E2555E9D1209E17D6C9 /* img_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C1E3AD27FD6756D6C30A3A /* img_banner.png */; };
+		2C4A6B94EDCDE970ABFA5ED0 /* DesignComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF27DA1E34CCD3E0C53D0EAA /* DesignComponents.swift */; };
+		2EB3E9A558698BDD81EBBD37 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5B3A90E527B0415AB333F8 /* HapticService.swift */; };
+		44F37C139B4EA3363196AD20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F6E0428A1407371CAF9618 /* AppDelegate.swift */; };
+		44FA95AD6FC47A89AC735620 /* AppDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC9BF23DEC7E3F24332D1D6 /* AppDataStore.swift */; };
+		60F856A129A41124B88DE2E3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E643A4A642F43968F9EBED /* SettingsView.swift */; };
+		89CB9041AE155E499AF54628 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11ADA4ABE0DF794465B49E /* ContentView.swift */; };
+		97812B0C811254B009C6EFAB /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12345723C66F627A11DFD658 /* ShakeEffect.swift */; };
+		A4492BE809DDF92856CCD345 /* img_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DBA922472D576005A56C64 /* img_background.png */; };
+		B1176D1375B9F8ACB311E317 /* WordsTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1ABB9CBE2D35D47E3FBBA /* WordsTrackerView.swift */; };
+		B34A70232935136CEB3F0454 /* VocabularyEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C75AF2A62A87782A2216AD /* VocabularyEntry.swift */; };
+		B4D5E6F708192A3B4C5D6E7F /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4D5E6F708192A3B4C5D6E /* StatisticsView.swift */; };
+		C1A2B3C4D5E60718293A4B01 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3C4D5E60718293A4B11 /* NotificationService.swift */; };
+		C1A2B3C4D5E60718293A4B02 /* ReviewSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3C4D5E60718293A4B12 /* ReviewSessionView.swift */; };
+		C1A2B3C4D5E60718293A4B03 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3C4D5E60718293A4B13 /* QuizView.swift */; };
+		C1A2B3C4D5E60718293A4B04 /* GlobalSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3C4D5E60718293A4B14 /* GlobalSearchView.swift */; };
+		C1A2B3C4D5E60718293A4B05 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3C4D5E60718293A4B15 /* BookDetailView.swift */; };
+		D7E57F2C1F1889507B105E8A /* ScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE421FB34B9A9644B2B14C /* ScreenBackground.swift */; };
+		D8FF15E5E840CCC316A283A9 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8F95BE1BB27318F9D96B39 /* AchievementsView.swift */; };
+		D95411C8FA28013992B64771 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6CB97CD23B19101C4A803 /* OnboardingView.swift */; };
+		DA18C3D69E16D20200E8446B /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C68B024289A7B4CDACA52 /* AppLinks.swift */; };
+		E2B3C4D5E60718293A4B5C6D /* KeyboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E60718293A4B5C /* KeyboardSupport.swift */; };
+		E538888BF83750CF64BFE40D /* img_accent.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E5C5F092E8DAE20990C354 /* img_accent.png */; };
+		EA953DFB28D8AC9D78660ED3 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D432AAD256FE41E3B0AA99DA /* Achievement.swift */; };
+		EB7429514297600EE9E31E3E /* OrganizedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842EFBB0214DE65B4F0527F /* OrganizedWord.swift */; };
+		FE83E21B14E8A7390A5D747E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D9098737C473CDB93BB /* SceneDelegate.swift */; };
+		FE84045D578E07274599A4A3 /* img_card.png in Resources */ = {isa = PBXBuildFile; fileRef = 8874022A1989963E0C70122A /* img_card.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02C75AF2A62A87782A2216AD /* VocabularyEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VocabularyEntry.swift; sourceTree = "<group>"; };
+		05E643A4A642F43968F9EBED /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0A11ADA4ABE0DF794465B49E /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12345723C66F627A11DFD658 /* ShakeEffect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
+		13E5C5F092E8DAE20990C354 /* img_accent.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = img_accent.png; sourceTree = "<group>"; };
+		2842EFBB0214DE65B4F0527F /* OrganizedWord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OrganizedWord.swift; sourceTree = "<group>"; };
+		2C61C853700B5BAD9FF8C3AA /* 311CogniloomReadify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 311CogniloomReadify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F6E0428A1407371CAF9618 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4BE6CB97CD23B19101C4A803 /* OnboardingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		4EEF0A02BF10D28B55A43A04 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5D709736F6F1CC22F14915F0 /* Pods-311CogniloomReadify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-311CogniloomReadify.release.xcconfig"; path = "Target Support Files/Pods-311CogniloomReadify/Pods-311CogniloomReadify.release.xcconfig"; sourceTree = "<group>"; };
+		6B8F95BE1BB27318F9D96B39 /* AchievementsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		79885D9098737C473CDB93BB /* SceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		86C1E3AD27FD6756D6C30A3A /* img_banner.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = img_banner.png; sourceTree = "<group>"; };
+		8874022A1989963E0C70122A /* img_card.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = img_card.png; sourceTree = "<group>"; };
+		935314D9E08AF292F3706660 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3C4D5E6F708192A3B4C5D6E /* StatisticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		A95C68B024289A7B4CDACA52 /* AppLinks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
+		BAC1ABB9CBE2D35D47E3FBBA /* WordsTrackerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WordsTrackerView.swift; sourceTree = "<group>"; };
+		C1A2B3C4D5E60718293A4B11 /* NotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C1A2B3C4D5E60718293A4B12 /* ReviewSessionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewSessionView.swift; sourceTree = "<group>"; };
+		C1A2B3C4D5E60718293A4B13 /* QuizView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		C1A2B3C4D5E60718293A4B14 /* GlobalSearchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlobalSearchView.swift; sourceTree = "<group>"; };
+		C1A2B3C4D5E60718293A4B15 /* BookDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		C6505D9DC86B07CA9149E451 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C671213B127D03C94BC5CFC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CAC9BF23DEC7E3F24332D1D6 /* AppDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDataStore.swift; sourceTree = "<group>"; };
+		CB5B3A90E527B0415AB333F8 /* HapticService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		CF27DA1E34CCD3E0C53D0EAA /* DesignComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DesignComponents.swift; sourceTree = "<group>"; };
+		D356AE56E47FC8D20AA3DB1A /* MainTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		D432AAD256FE41E3B0AA99DA /* Achievement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		D514BACD63816C2F9E3F8ACD /* TrackedWord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrackedWord.swift; sourceTree = "<group>"; };
+		DBF63730E7793ABE49A3DB07 /* WordOrganizerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WordOrganizerView.swift; sourceTree = "<group>"; };
+		DDDE421FB34B9A9644B2B14C /* ScreenBackground.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenBackground.swift; sourceTree = "<group>"; };
+		E1DBA922472D576005A56C64 /* img_background.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = img_background.png; sourceTree = "<group>"; };
+		EA1AA50CCADA68F024902DC9 /* Pods-311CogniloomReadify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-311CogniloomReadify.debug.xcconfig"; path = "Target Support Files/Pods-311CogniloomReadify/Pods-311CogniloomReadify.debug.xcconfig"; sourceTree = "<group>"; };
+		EE128A36FE38A697665B3579 /* Pods_311CogniloomReadify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_311CogniloomReadify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1A2B3C4D5E60718293A4B5C /* KeyboardSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardSupport.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65BB174EB3D1FE045B0B681C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11C3AC481139ABB7E8D03AF2 /* Assets.xcassets */ = {
+			isa = PBXGroup;
+			children = (
+				8FBBE256CDDD6EEBCD2537D1 /* img_accent.imageset */,
+				DEC6729155DAE707DA86EF78 /* img_background.imageset */,
+				59FDC24A38FABFEBF703042C /* img_banner.imageset */,
+				8367755A1192A49009B9D061 /* img_card.imageset */,
+			);
+			path = Assets.xcassets;
+			sourceTree = "<group>";
+		};
+		14E243BE87BABF9C08031281 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58377AC8CDC66263D0A851E2 /* Achievements */,
+				0A11ADA4ABE0DF794465B49E /* ContentView.swift */,
+				8508BC16B273EC7D844E42B1 /* Features */,
+				18978061E3AE35382A49888C /* Main */,
+				1979045A99B0AAC7F1D54DE2 /* Onboarding */,
+				C695B86FCFD241F34F05CB84 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		18978061E3AE35382A49888C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D356AE56E47FC8D20AA3DB1A /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1979045A99B0AAC7F1D54DE2 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4BE6CB97CD23B19101C4A803 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		217E8DA263AE3292EBB716C9 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4EEF0A02BF10D28B55A43A04 /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		514E5126C59F30837E0ED527 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C249ACD8BD5208F6ABD4CC2 /* iOS */,
+				EE128A36FE38A697665B3579 /* Pods_311CogniloomReadify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58377AC8CDC66263D0A851E2 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				6B8F95BE1BB27318F9D96B39 /* AchievementsView.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		59FDC24A38FABFEBF703042C /* img_banner.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				86C1E3AD27FD6756D6C30A3A /* img_banner.png */,
+			);
+			path = img_banner.imageset;
+			sourceTree = "<group>";
+		};
+		69F28BBAC19C7BB519BBB058 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CAC9BF23DEC7E3F24332D1D6 /* AppDataStore.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6C249ACD8BD5208F6ABD4CC2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C671213B127D03C94BC5CFC3 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6D7A4907233FD47687511CC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D709736F6F1CC22F14915F0 /* Pods-311CogniloomReadify.release.xcconfig */,
+				EA1AA50CCADA68F024902DC9 /* Pods-311CogniloomReadify.debug.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		78FE529B2335F05ED34ECBD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D432AAD256FE41E3B0AA99DA /* Achievement.swift */,
+				2842EFBB0214DE65B4F0527F /* OrganizedWord.swift */,
+				D514BACD63816C2F9E3F8ACD /* TrackedWord.swift */,
+				02C75AF2A62A87782A2216AD /* VocabularyEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7CCB8FDB907314D179853A92 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CF27DA1E34CCD3E0C53D0EAA /* DesignComponents.swift */,
+				F1A2B3C4D5E60718293A4B5C /* KeyboardSupport.swift */,
+				DDDE421FB34B9A9644B2B14C /* ScreenBackground.swift */,
+				12345723C66F627A11DFD658 /* ShakeEffect.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8367755A1192A49009B9D061 /* img_card.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				8874022A1989963E0C70122A /* img_card.png */,
+			);
+			path = img_card.imageset;
+			sourceTree = "<group>";
+		};
+		8508BC16B273EC7D844E42B1 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C1A2B3C4D5E60718293A4B15 /* BookDetailView.swift */,
+				C1A2B3C4D5E60718293A4B14 /* GlobalSearchView.swift */,
+				C1A2B3C4D5E60718293A4B13 /* QuizView.swift */,
+				C1A2B3C4D5E60718293A4B12 /* ReviewSessionView.swift */,
+				DBF63730E7793ABE49A3DB07 /* WordOrganizerView.swift */,
+				BAC1ABB9CBE2D35D47E3FBBA /* WordsTrackerView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		883B7D7BA44738CFDCDB6200 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A95C68B024289A7B4CDACA52 /* AppLinks.swift */,
+				CB5B3A90E527B0415AB333F8 /* HapticService.swift */,
+				C1A2B3C4D5E60718293A4B11 /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8FBBE256CDDD6EEBCD2537D1 /* img_accent.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				13E5C5F092E8DAE20990C354 /* img_accent.png */,
+			);
+			path = img_accent.imageset;
+			sourceTree = "<group>";
+		};
+		AA05C2374CB5A7823599FE23 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				41F6E0428A1407371CAF9618 /* AppDelegate.swift */,
+				79885D9098737C473CDB93BB /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AB4E1AED3776F27F012F412C = {
+			isa = PBXGroup;
+			children = (
+				FFBB44D8D11F0FCA86A296BD /* Products */,
+				514E5126C59F30837E0ED527 /* Frameworks */,
+				DB7F5D0981FA5D699E5342FB /* 311CogniloomReadify */,
+				6D7A4907233FD47687511CC6 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		C695B86FCFD241F34F05CB84 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				05E643A4A642F43968F9EBED /* SettingsView.swift */,
+				A3C4D5E6F708192A3B4C5D6E /* StatisticsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DB7F5D0981FA5D699E5342FB /* 311CogniloomReadify */ = {
+			isa = PBXGroup;
+			children = (
+				AA05C2374CB5A7823599FE23 /* App */,
+				78FE529B2335F05ED34ECBD9 /* Models */,
+				883B7D7BA44738CFDCDB6200 /* Services */,
+				7CCB8FDB907314D179853A92 /* Utilities */,
+				69F28BBAC19C7BB519BBB058 /* ViewModels */,
+				14E243BE87BABF9C08031281 /* Views */,
+				C6505D9DC86B07CA9149E451 /* Info.plist */,
+				935314D9E08AF292F3706660 /* Assets.xcassets */,
+				217E8DA263AE3292EBB716C9 /* Base.lproj */,
+				11C3AC481139ABB7E8D03AF2 /* Assets.xcassets */,
+			);
+			path = 311CogniloomReadify;
+			sourceTree = "<group>";
+		};
+		DEC6729155DAE707DA86EF78 /* img_background.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				E1DBA922472D576005A56C64 /* img_background.png */,
+			);
+			path = img_background.imageset;
+			sourceTree = "<group>";
+		};
+		FFBB44D8D11F0FCA86A296BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C61C853700B5BAD9FF8C3AA /* 311CogniloomReadify.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		768DD65FC6201AF4A3567F1D /* 311CogniloomReadify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70CC37E8278E02CC417D331B /* Build configuration list for PBXNativeTarget "311CogniloomReadify" */;
+			buildPhases = (
+				E9A2C2D96DD6D692CBFE2AD6 /* [CP] Check Pods Manifest.lock */,
+				59871C53DB99ABAFD379A749 /* Sources */,
+				65BB174EB3D1FE045B0B681C /* Frameworks */,
+				AC7DD14BDA703C3E8A5C1520 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 311CogniloomReadify;
+			productName = 311CogniloomReadify;
+			productReference = 2C61C853700B5BAD9FF8C3AA /* 311CogniloomReadify.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B8995966829F160C5DAB93D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2620;
+			};
+			buildConfigurationList = E29C92C6A58CAC4BCF61EDB5 /* Build configuration list for PBXProject "311CogniloomReadify" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB4E1AED3776F27F012F412C;
+			productRefGroup = FFBB44D8D11F0FCA86A296BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				768DD65FC6201AF4A3567F1D /* 311CogniloomReadify */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC7DD14BDA703C3E8A5C1520 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EF9830CC39EE138CED4B0E1 /* Assets.xcassets in Resources */,
+				269583C1E4916B483E601862 /* LaunchScreen.storyboard in Resources */,
+				E538888BF83750CF64BFE40D /* img_accent.png in Resources */,
+				A4492BE809DDF92856CCD345 /* img_background.png in Resources */,
+				29797E2555E9D1209E17D6C9 /* img_banner.png in Resources */,
+				FE84045D578E07274599A4A3 /* img_card.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E9A2C2D96DD6D692CBFE2AD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-311CogniloomReadify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59871C53DB99ABAFD379A749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44F37C139B4EA3363196AD20 /* AppDelegate.swift in Sources */,
+				FE83E21B14E8A7390A5D747E /* SceneDelegate.swift in Sources */,
+				EA953DFB28D8AC9D78660ED3 /* Achievement.swift in Sources */,
+				EB7429514297600EE9E31E3E /* OrganizedWord.swift in Sources */,
+				041518EE3DC8C7E5F2FCDAA8 /* TrackedWord.swift in Sources */,
+				B34A70232935136CEB3F0454 /* VocabularyEntry.swift in Sources */,
+				DA18C3D69E16D20200E8446B /* AppLinks.swift in Sources */,
+				2EB3E9A558698BDD81EBBD37 /* HapticService.swift in Sources */,
+				C1A2B3C4D5E60718293A4B01 /* NotificationService.swift in Sources */,
+				2C4A6B94EDCDE970ABFA5ED0 /* DesignComponents.swift in Sources */,
+				E2B3C4D5E60718293A4B5C6D /* KeyboardSupport.swift in Sources */,
+				D7E57F2C1F1889507B105E8A /* ScreenBackground.swift in Sources */,
+				97812B0C811254B009C6EFAB /* ShakeEffect.swift in Sources */,
+				44FA95AD6FC47A89AC735620 /* AppDataStore.swift in Sources */,
+				D8FF15E5E840CCC316A283A9 /* AchievementsView.swift in Sources */,
+				89CB9041AE155E499AF54628 /* ContentView.swift in Sources */,
+				0478779DA4FE4A06B9785058 /* WordOrganizerView.swift in Sources */,
+				B1176D1375B9F8ACB311E317 /* WordsTrackerView.swift in Sources */,
+				C1A2B3C4D5E60718293A4B02 /* ReviewSessionView.swift in Sources */,
+				C1A2B3C4D5E60718293A4B03 /* QuizView.swift in Sources */,
+				C1A2B3C4D5E60718293A4B04 /* GlobalSearchView.swift in Sources */,
+				C1A2B3C4D5E60718293A4B05 /* BookDetailView.swift in Sources */,
+				205B547D9027016832D19DA9 /* MainTabView.swift in Sources */,
+				D95411C8FA28013992B64771 /* OnboardingView.swift in Sources */,
+				60F856A129A41124B88DE2E3 /* SettingsView.swift in Sources */,
+				B4D5E6F708192A3B4C5D6E7F /* StatisticsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0FE0F71C4011034BFC67C21D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA1AA50CCADA68F024902DC9 /* Pods-311CogniloomReadify.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = 311CogniloomReadify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cogniloom Readify";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.frd.c0gn1lr6df;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5CCE59DB988988FA81F06063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D709736F6F1CC22F14915F0 /* Pods-311CogniloomReadify.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = 311CogniloomReadify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cogniloom Readify";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.frd.c0gn1lr6df;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B57D4CA39CC324AB9257546C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BFE489DBCCAB2A854B05173C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70CC37E8278E02CC417D331B /* Build configuration list for PBXNativeTarget "311CogniloomReadify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CCE59DB988988FA81F06063 /* Release */,
+				0FE0F71C4011034BFC67C21D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E29C92C6A58CAC4BCF61EDB5 /* Build configuration list for PBXProject "311CogniloomReadify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B57D4CA39CC324AB9257546C /* Debug */,
+				BFE489DBCCAB2A854B05173C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B8995966829F160C5DAB93D7 /* Project object */;
+}
