@@ -1,44 +1,43 @@
 import Foundation
 
-struct VocabularyEntry: Identifiable, Codable, Equatable {
+struct ReadingSession: Identifiable, Codable, Equatable {
     var id: UUID
-    var word: String
-    var definition: String
-    var context: String
+    var bookId: UUID
     var bookTitle: String
-    var createdAt: Date
-    var tags: [String]
-    var notes: String
+    var plannedMinutes: Int
+    var quoteGoal: Int
+    var startedAt: Date
+    var endedAt: Date?
+    var elapsedSeconds: Int
+    var cardIds: [UUID]
 
     init(
         id: UUID = UUID(),
-        word: String,
-        definition: String,
-        context: String,
+        bookId: UUID,
         bookTitle: String,
-        createdAt: Date = Date(),
-        tags: [String] = [],
-        notes: String = ""
+        plannedMinutes: Int,
+        quoteGoal: Int,
+        startedAt: Date = Date(),
+        endedAt: Date? = nil,
+        elapsedSeconds: Int = 0,
+        cardIds: [UUID] = []
     ) {
         self.id = id
-        self.word = word
-        self.definition = definition
-        self.context = context
+        self.bookId = bookId
         self.bookTitle = bookTitle
-        self.createdAt = createdAt
-        self.tags = tags
-        self.notes = notes
+        self.plannedMinutes = plannedMinutes
+        self.quoteGoal = quoteGoal
+        self.startedAt = startedAt
+        self.endedAt = endedAt
+        self.elapsedSeconds = elapsedSeconds
+        self.cardIds = cardIds
     }
 
-    init(from decoder: Decoder) throws {
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        id = try c.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
-        word = try c.decode(String.self, forKey: .word)
-        definition = try c.decode(String.self, forKey: .definition)
-        context = try c.decodeIfPresent(String.self, forKey: .context) ?? ""
-        bookTitle = try c.decode(String.self, forKey: .bookTitle)
-        createdAt = try c.decodeIfPresent(Date.self, forKey: .createdAt) ?? Date()
-        tags = try c.decodeIfPresent([String].self, forKey: .tags) ?? []
-        notes = try c.decodeIfPresent(String.self, forKey: .notes) ?? ""
+    var isActive: Bool { endedAt == nil }
+
+    var remainingSeconds: Int {
+        max(0, plannedMinutes * 60 - elapsedSeconds)
     }
+
+    var quotesCaptured: Int { cardIds.count }
 }

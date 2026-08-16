@@ -4,10 +4,10 @@ struct GlobalSearchView: View {
     @EnvironmentObject private var store: AppDataStore
     @Environment(\.dismiss) private var dismiss
     @State private var query = ""
-    @State private var bookRoute: String?
+    @State private var editingCard: PassageCard?
 
-    private var results: [SearchResult] {
-        store.searchAll(query)
+    private var results: [PassageCard] {
+        store.searchCards(query)
     }
 
     var body: some View {
@@ -16,7 +16,7 @@ struct GlobalSearchView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundStyle(Color("AppTextSecondary"))
-                    TextField("Search all sources", text: $query)
+                    TextField("Search quotes, glosses, books, tags", text: $query)
                         .foregroundStyle(Color("AppTextPrimary"))
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
@@ -38,7 +38,7 @@ struct GlobalSearchView: View {
                 .padding(.bottom, 10)
 
                 if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    Text("Search lexicon, themes, tags, notes, and insights.")
+                    Text("Search the sentences you lifted from the page.")
                         .font(.system(.subheadline, design: .serif))
                         .foregroundStyle(Color("AppTextSecondary"))
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -49,17 +49,41 @@ struct GlobalSearchView: View {
                         .foregroundStyle(Color("AppTextSecondary"))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
-                    List {
-                        ForEach(results) { hit in
-                            resultRow(hit)
-                                .listRowBackground(Color.clear)
-                                .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
-                                .listRowSeparator(.hidden)
+                    ScrollView {
+                        LazyVStack(spacing: 12) {
+                            ForEach(results) { card in
+                                Button {
+                                    editingCard = card
+                                } label: {
+                                    SoftCard {
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            HStack {
+                                                Text(card.word)
+                                                    .font(.system(.headline, design: .serif).weight(.bold))
+                                                    .foregroundStyle(Color("AppTextPrimary"))
+                                                Spacer()
+                                                Text(card.bookTitle)
+                                                    .font(.caption2.weight(.bold))
+                                                    .foregroundStyle(Color("AppBackground"))
+                                                    .padding(.horizontal, 8)
+                                                    .padding(.vertical, 3)
+                                                    .background(Color("AppPrimary"))
+                                            }
+                                            HighlightedPassageText(passage: card.passage, wordRange: card.wordNSRange)
+                                            Text(card.meaning)
+                                                .font(.subheadline)
+                                                .foregroundStyle(Color("AppTextSecondary"))
+                                                .lineLimit(2)
+                                        }
+                                    }
+                                }
+                                .buttonStyle(.plain)
+                            }
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 20)
                     }
-                    .listStyle(.plain)
-                    .scrollContentBackground(.hidden)
-                    .scrollDismissesKeyboard(.immediately)
+                    .clearScrollBackground()
                 }
             }
             .navigationTitle("Search")
@@ -82,48 +106,9 @@ struct GlobalSearchView: View {
             }
             .screenBackground()
             .dismissKeyboardOnTap()
-            .navigationDestination(isPresented: Binding(
-                get: { bookRoute != nil },
-                set: { if !$0 { bookRoute = nil } }
-            )) {
-                if let bookRoute, let item = store.bookShelfItem(named: bookRoute) {
-                    BookDetailView(book: item)
-                }
-            }
-        }
-    }
-
-    private func resultRow(_ hit: SearchResult) -> some View {
-        SoftCard {
-            VStack(alignment: .leading, spacing: 6) {
-                HStack {
-                    Text(hit.word)
-                        .font(.system(.headline, design: .serif).weight(.bold))
-                        .foregroundStyle(Color("AppTextPrimary"))
-                        .lineLimit(1)
-                    Spacer()
-                    Text(hit.sourceLabel)
-                        .font(.caption2.weight(.bold))
-                        .foregroundStyle(Color("AppBackground"))
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
-                        .background(Color("AppPrimary"))
-                }
-                Text(hit.subtitle)
-                    .font(.subheadline)
-                    .foregroundStyle(Color("AppTextSecondary"))
-                    .lineLimit(2)
-                if let book = hit.bookTitle {
-                    Button {
-                        HapticService.light()
-                        bookRoute = book
-                    } label: {
-                        Label(book, systemImage: "book.closed")
-                            .font(.caption.weight(.medium))
-                            .foregroundStyle(Color("AppAccent"))
-                    }
-                    .buttonStyle(.plain)
-                }
+            .sheet(item: $editingCard) { card in
+                CardEditorSheet(card: card)
+                    .environmentObject(store)
             }
         }
     }

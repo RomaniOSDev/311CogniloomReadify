@@ -1,50 +1,81 @@
 import Foundation
+import SwiftUI
 
-enum WordTheme: String, Codable, CaseIterable, Identifiable {
-    case literary = "Literary"
-    case academic = "Academic"
-    case everyday = "Everyday"
-    case poetic = "Poetic"
-    case technical = "Technical"
+enum CoverTint: String, Codable, CaseIterable, Identifiable {
+    case ink
+    case rust
+    case moss
+    case wine
+    case slate
+    case gold
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .ink: return "Ink"
+        case .rust: return "Rust"
+        case .moss: return "Moss"
+        case .wine: return "Wine"
+        case .slate: return "Slate"
+        case .gold: return "Gold"
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .ink: return Color(red: 0.16, green: 0.22, blue: 0.28)
+        case .rust: return Color(red: 0.55, green: 0.28, blue: 0.16)
+        case .moss: return Color(red: 0.22, green: 0.36, blue: 0.24)
+        case .wine: return Color(red: 0.42, green: 0.14, blue: 0.20)
+        case .slate: return Color(red: 0.30, green: 0.34, blue: 0.40)
+        case .gold: return Color(red: 0.62, green: 0.48, blue: 0.22)
+        }
+    }
 }
 
-struct OrganizedWord: Identifiable, Codable, Equatable {
+struct ShelfBook: Identifiable, Codable, Equatable {
     var id: UUID
-    var word: String
-    var example: String
-    var theme: WordTheme
+    var title: String
+    var author: String
+    var chapter: String
+    var page: String
+    var coverTint: CoverTint
+    var coverImageData: Data?
+    var deskText: String
     var createdAt: Date
-    var tags: [String]
-    var notes: String
+    var updatedAt: Date
 
     init(
         id: UUID = UUID(),
-        word: String,
-        example: String,
-        theme: WordTheme,
+        title: String,
+        author: String = "",
+        chapter: String = "",
+        page: String = "",
+        coverTint: CoverTint = .ink,
+        coverImageData: Data? = nil,
+        deskText: String = "",
         createdAt: Date = Date(),
-        tags: [String] = [],
-        notes: String = ""
+        updatedAt: Date = Date()
     ) {
         self.id = id
-        self.word = word
-        self.example = example
-        self.theme = theme
+        self.title = title
+        self.author = author
+        self.chapter = chapter
+        self.page = page
+        self.coverTint = coverTint
+        self.coverImageData = coverImageData
+        self.deskText = deskText
         self.createdAt = createdAt
-        self.tags = tags
-        self.notes = notes
+        self.updatedAt = updatedAt
     }
 
-    init(from decoder: Decoder) throws {
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        id = try c.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
-        word = try c.decode(String.self, forKey: .word)
-        example = try c.decode(String.self, forKey: .example)
-        theme = try c.decode(WordTheme.self, forKey: .theme)
-        createdAt = try c.decodeIfPresent(Date.self, forKey: .createdAt) ?? Date()
-        tags = try c.decodeIfPresent([String].self, forKey: .tags) ?? []
-        notes = try c.decodeIfPresent(String.self, forKey: .notes) ?? ""
+    var progressLabel: String {
+        var parts: [String] = []
+        let chapterTrim = chapter.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pageTrim = page.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !chapterTrim.isEmpty { parts.append(chapterTrim) }
+        if !pageTrim.isEmpty { parts.append("p. \(pageTrim)") }
+        return parts.isEmpty ? "No place marked" : parts.joined(separator: " · ")
     }
 }

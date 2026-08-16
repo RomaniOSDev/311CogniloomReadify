@@ -8,21 +8,21 @@ struct OnboardingView: View {
 
     private let pages: [(title: String, body: String, symbol: String, image: String)] = [
         (
-            "Expand Your Vocabulary",
-            "Discover how this app helps you enrich your language skills through your readings.",
-            "text.book.closed.fill",
+            "Paste the page",
+            "Drop a paragraph from the book you are holding — clipboard, .txt, or EPUB. The desk holds the page, not a blank form.",
+            "doc.plaintext",
             "img_banner"
         ),
         (
-            "Log Unique Words",
-            "Tap on any word in your book to capture its meaning and usage.",
-            "pencil.and.outline",
+            "Tap the word that stopped you",
+            "The sentence around it becomes the card. You write what the word is doing there — not a dictionary entry from nowhere.",
+            "hand.tap",
             "img_card"
         ),
         (
-            "Start Logging Now",
-            "Begin by adding your first set of interesting words from your current book.",
-            "bookmark.fill",
+            "Fill the blank tomorrow",
+            "Review is a hole in that same sentence. A sitting timer keeps you at the desk. The shelf is the book, not another list.",
+            "character.textbox",
             "img_accent"
         )
     ]
@@ -65,7 +65,7 @@ struct OnboardingView: View {
                     store.completeOnboarding()
                 }
             } label: {
-                Text(page < pages.count - 1 ? "Next" : "Get Started")
+                Text(page < pages.count - 1 ? "Next" : "Open the shelf")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(PrimaryButtonStyle())
@@ -145,14 +145,14 @@ struct OnboardingView: View {
                     .font(.system(size: 28, weight: .bold, design: .serif))
                     .foregroundStyle(Color("AppTextPrimary"))
                     .multilineTextAlignment(.center)
-                    .lineLimit(2)
+                    .lineLimit(3)
                     .minimumScaleFactor(0.8)
                     .manuscriptUnderline()
                 Text(item.body)
                     .font(.system(.body, design: .serif))
                     .foregroundStyle(Color("AppTextSecondary"))
                     .multilineTextAlignment(.center)
-                    .lineLimit(4)
+                    .lineLimit(6)
                     .minimumScaleFactor(0.8)
                     .padding(.horizontal, 28)
             }

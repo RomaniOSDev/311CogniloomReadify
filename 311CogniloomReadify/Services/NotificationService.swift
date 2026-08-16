@@ -34,7 +34,7 @@ final class NotificationService {
             date.minute = minute
             let content = UNMutableNotificationContent()
             content.title = "Cogniloom"
-            content.body = "Daily goal: capture \(goal) word\(goal == 1 ? "" : "s") today."
+            content.body = "Lift \(goal) quote\(goal == 1 ? "" : "s") from the page you are reading."
             content.sound = .default
             let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
             let request = UNNotificationRequest(identifier: self.reminderId, content: content, trigger: trigger)

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 // MARK: - Literary manuscript / ledger language (distinct from soft gradient cards)
 
@@ -270,5 +271,200 @@ extension View {
                 KeyboardSupport.dismiss()
             }
         )
+    }
+
+    func clearScrollBackground() -> some View {
+        scrollContentBackground(.hidden)
+            .background(Color.clear)
+    }
+}
+
+struct BookCoverPlate: View {
+    let book: ShelfBook
+
+    var body: some View {
+        ZStack {
+            book.coverTint.color
+            if let data = book.coverImageData, let image = UIImage(data: data) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                LinearGradient(
+                    colors: [book.coverTint.color, book.coverTint.color.opacity(0.72)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                VStack(spacing: 8) {
+                    Text(String(book.title.prefix(1)).uppercased())
+                        .font(.system(size: 28, weight: .bold, design: .serif))
+                    Text(book.title)
+                        .font(.system(size: 12, weight: .semibold, design: .serif))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(3)
+                        .minimumScaleFactor(0.7)
+                        .padding(.horizontal, 8)
+                }
+                .foregroundStyle(Color.white.opacity(0.92))
+            }
+        }
+        .aspectRatio(0.68, contentMode: .fit)
+        .clipped()
+        .overlay(
+            Rectangle()
+                .strokeBorder(Color("AppTextPrimary").opacity(0.28), lineWidth: 1)
+        )
+        .shadow(color: .black.opacity(0.35), radius: 4, x: 2, y: 3)
+    }
+}
+
+struct HighlightedPassageText: View {
+    let passage: String
+    let wordRange: NSRange
+
+    var body: some View {
+        Text(attributed)
+            .font(.system(.body, design: .serif))
+            .foregroundStyle(Color("AppTextPrimary"))
+            .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private var attributed: AttributedString {
+        var result = AttributedString(passage)
+        guard
+            let stringRange = Range(wordRange, in: passage),
+            let attrRange = Range(stringRange, in: result)
+        else { return result }
+        result[attrRange].backgroundColor = Color("AppAccent").opacity(0.35)
+        result[attrRange].foregroundColor = Color("AppTextPrimary")
+        result[attrRange].underlineStyle = .single
+        return result
+    }
+}
+
+struct SittingChip: View {
+    let session: ReadingSession
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "timer")
+            Text(Self.clock(session.remainingSeconds))
+                .monospacedDigit()
+            Text("·")
+            Text("\(session.quotesCaptured)/\(session.quoteGoal)")
+        }
+        .font(.caption.weight(.bold))
+        .foregroundStyle(Color("AppBackground"))
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(Color("AppPrimary"))
+        .overlay(
+            Rectangle()
+                .strokeBorder(Color("AppAccent"), lineWidth: 1)
+                .padding(2)
+        )
+    }
+
+    static func clock(_ seconds: Int) -> String {
+        let m = max(0, seconds) / 60
+        let s = max(0, seconds) % 60
+        return String(format: "%d:%02d", m, s)
+    }
+}
+
+/// Tap a word inside a passage. Uses the system text tokenizer so punctuation stays out of the word.
+struct TappablePassageView: UIViewRepresentable {
+    let text: String
+    var highlightRanges: [NSRange] = []
+    var onWord: (String, NSRange) -> Void
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(onWord: onWord)
+    }
+
+    func makeUIView(context: Context) -> UITextView {
+        let view = UITextView()
+        view.delegate = context.coordinator
+        view.isEditable = false
+        view.isSelectable = false
+        view.isScrollEnabled = true
+        view.backgroundColor = .clear
+        view.textContainerInset = UIEdgeInsets(top: 8, left: 6, bottom: 8, right: 6)
+        view.textContainer.lineFragmentPadding = 0
+        view.adjustsFontForContentSizeCategory = true
+        let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap(_:)))
+        view.addGestureRecognizer(tap)
+        context.coordinator.textView = view
+        applyText(to: view)
+        return view
+    }
+
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        context.coordinator.onWord = onWord
+        if uiView.attributedText?.string != text {
+            applyText(to: uiView)
+        } else {
+            applyHighlights(to: uiView)
+        }
+    }
+
+    private func applyText(to view: UITextView) {
+        view.attributedText = makeAttributed()
+    }
+
+    private func applyHighlights(to view: UITextView) {
+        view.attributedText = makeAttributed()
+    }
+
+    private func makeAttributed() -> NSAttributedString {
+        let font = UIFont.preferredFont(forTextStyle: .body)
+        let serif = font.fontDescriptor.withDesign(.serif).map { UIFont(descriptor: $0, size: font.pointSize) } ?? font
+        let color = UIColor(named: "AppTextPrimary") ?? .label
+        let storage = NSMutableAttributedString(
+            string: text,
+            attributes: [
+                .font: serif,
+                .foregroundColor: color
+            ]
+        )
+        let accent = UIColor(named: "AppAccent") ?? .systemOrange
+        for range in highlightRanges where NSMaxRange(range) <= storage.length {
+            storage.addAttributes([
+                .backgroundColor: accent.withAlphaComponent(0.32),
+                .underlineStyle: NSUnderlineStyle.single.rawValue
+            ], range: range)
+        }
+        return storage
+    }
+
+    final class Coordinator: NSObject, UITextViewDelegate {
+        var onWord: (String, NSRange) -> Void
+        weak var textView: UITextView?
+
+        init(onWord: @escaping (String, NSRange) -> Void) {
+            self.onWord = onWord
+        }
+
+        @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+            guard let textView else { return }
+            let point = gesture.location(in: textView)
+            guard let position = textView.closestPosition(to: point) else { return }
+            guard let range = textView.tokenizer.rangeEnclosingPosition(
+                position,
+                with: .word,
+                inDirection: UITextDirection(rawValue: UITextLayoutDirection.right.rawValue)
+            ) ?? textView.tokenizer.rangeEnclosingPosition(
+                position,
+                with: .word,
+                inDirection: UITextDirection(rawValue: UITextLayoutDirection.left.rawValue)
+            ) else { return }
+            guard let word = textView.text(in: range) else { return }
+            let trimmed = word.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard trimmed.count > 1, trimmed.contains(where: \.isLetter) else { return }
+            let location = textView.offset(from: textView.beginningOfDocument, to: range.start)
+            let length = textView.offset(from: range.start, to: range.end)
+            HapticService.light()
+            onWord(trimmed, NSRange(location: location, length: length))
+        }
     }
 }

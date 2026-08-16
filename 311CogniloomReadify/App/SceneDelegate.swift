@@ -13,6 +13,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = root
         self.window = window
         window.makeKeyAndVisible()
+        handleIncomingURLs(connectionOptions.urlContexts)
+    }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        handleIncomingURLs(URLContexts)
+    }
+
+    private func handleIncomingURLs(_ contexts: Set<UIOpenURLContext>) {
+        guard let url = contexts.first?.url,
+              let text = DocumentTextLoader.load(from: url) else { return }
+        AppDataStore.shared.ingestImportedText(text)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}

@@ -4,7 +4,8 @@ struct AchievementsView: View {
     @EnvironmentObject private var store: AppDataStore
 
     var body: some View {
-        NavigationStack {
+        ZStack {
+            Color.clear
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     SoftCard {
@@ -14,11 +15,11 @@ struct AchievementsView: View {
                                 .foregroundStyle(Color("AppTextPrimary"))
                                 .manuscriptUnderline()
                             HStack(spacing: 0) {
-                                ledgerMetric("Words", store.stats.itemsCreated)
+                                ledgerMetric("Quotes", store.stats.quotesCaptured)
                                 Rectangle().fill(Color("AppTextSecondary").opacity(0.3)).frame(width: 1, height: 36)
-                                ledgerMetric("Sessions", store.stats.sessionsCompleted)
+                                ledgerMetric("Sittings", store.stats.sessionsCompleted)
                                 Rectangle().fill(Color("AppTextSecondary").opacity(0.3)).frame(width: 1, height: 36)
-                                ledgerMetric("Streak", store.stats.streakDays)
+                                ledgerMetric("Minutes", store.stats.minutesRead)
                             }
                         }
                     }
@@ -34,14 +35,15 @@ struct AchievementsView: View {
                     .padding(.bottom, 20)
                 }
             }
-            .scrollDismissesKeyboard(.immediately)
-            .navigationTitle("Ledger")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color("AppSurface"), for: .navigationBar)
-            .toolbarColorScheme(store.manuscriptTheme.colorScheme.swiftUI, for: .navigationBar)
-            .screenBackground()
-            .dismissKeyboardOnTap()
+            .clearScrollBackground()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .navigationTitle("Seals")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color("AppSurface"), for: .navigationBar)
+        .toolbarColorScheme(store.manuscriptTheme.colorScheme.swiftUI, for: .navigationBar)
+        .screenBackground()
+        .dismissKeyboardOnTap()
     }
 
     private func ledgerMetric(_ title: String, _ value: Int) -> some View {

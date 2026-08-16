@@ -18,7 +18,7 @@ struct SettingsView: View {
                         SoftCard {
                             VStack(alignment: .leading, spacing: 12) {
                                 HStack {
-                                    Text("Stats")
+                                    Text("Desk log")
                                         .font(.system(.headline, design: .serif))
                                         .foregroundStyle(Color("AppTextPrimary"))
                                     Spacer()
@@ -30,9 +30,9 @@ struct SettingsView: View {
                                         .foregroundStyle(Color("AppTextSecondary"))
                                 }
                                 HStack {
-                                    statCell("Words", "\(store.stats.itemsCreated)")
-                                    statCell("Sessions", "\(store.stats.sessionsCompleted)")
-                                    statCell("Streak", "\(store.stats.streakDays)")
+                                    statCell("Quotes", "\(store.stats.quotesCaptured)")
+                                    statCell("Sittings", "\(store.stats.sessionsCompleted)")
+                                    statCell("Minutes", "\(store.stats.minutesRead)")
                                 }
                             }
                         }
@@ -51,7 +51,7 @@ struct SettingsView: View {
                                 get: { store.dailyGoal },
                                 set: { store.setDailyGoal($0) }
                             ), in: 1...30) {
-                                Text("\(store.dailyGoal) word\(store.dailyGoal == 1 ? "" : "s") / day")
+                                Text("\(store.dailyGoal) quote\(store.dailyGoal == 1 ? "" : "s") / day")
                                     .foregroundStyle(Color("AppTextPrimary"))
                             }
                             .tint(Color("AppPrimary"))
@@ -173,6 +173,26 @@ struct SettingsView: View {
                         }
                     }
 
+                    NavigationLink {
+                        AchievementsView()
+                    } label: {
+                        SoftCard {
+                            HStack {
+                                Label("Seals", systemImage: "seal.fill")
+                                    .font(.system(.headline, design: .serif))
+                                    .foregroundStyle(Color("AppTextPrimary"))
+                                Spacer()
+                                Text("\(store.unlockedAchievements.count)/\(AchievementKind.allCases.count)")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(Color("AppPrimary"))
+                                Image(systemName: "chevron.right")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(Color("AppTextSecondary"))
+                            }
+                        }
+                    }
+                    .buttonStyle(.plain)
+
                     SoftCard {
                         VStack(spacing: 0) {
                             settingsButton(title: "Rate Us", systemImage: "star.fill") {
@@ -235,7 +255,7 @@ struct SettingsView: View {
                     store.resetAll()
                 }
             } message: {
-                Text("This clears tracked words, organized vocabulary, book insights, and achievements on this device.")
+                Text("This clears the shelf, quote cards, sittings, and seals on this device.")
             }
         }
     }

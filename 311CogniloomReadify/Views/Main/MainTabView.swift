@@ -5,9 +5,9 @@ struct MainTabView: View {
     @State private var selected = 0
 
     private let tabs: [(title: String, icon: String)] = [
-        ("Words", "text.book.closed.fill"),
-        ("Organize", "books.vertical.fill"),
-        ("Badges", "seal.fill"),
+        ("Shelf", "books.vertical.fill"),
+        ("Inbox", "tray.full.fill"),
+        ("Cloze", "character.textbox"),
         ("Prefs", "slider.horizontal.3")
     ]
 
@@ -16,7 +16,6 @@ struct MainTabView: View {
             Color("AppBackground")
                 .ignoresSafeArea()
 
-            // Covers the home-indicator strip under the custom tab bar.
             VStack(spacing: 0) {
                 Spacer(minLength: 0)
                 Color("AppSurface")
@@ -28,16 +27,18 @@ struct MainTabView: View {
             VStack(spacing: 0) {
                 Group {
                     switch selected {
-                    case 0: WordsTrackerView()
-                    case 1: WordOrganizerView()
-                    case 2: AchievementsView()
+                    case 0: ShelfView()
+                    case 1: InboxView()
+                    case 2: ClozeReviewView()
                     default: SettingsView()
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .dismissKeyboardOnTap()
 
-                LedgerTabBar(selected: $selected, items: tabs)
+                if !store.hidesTabBar {
+                    LedgerTabBar(selected: $selected, items: tabs)
+                }
             }
 
             if let title = store.bannerTitle {
