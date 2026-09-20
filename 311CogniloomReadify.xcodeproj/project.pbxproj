@@ -39,6 +39,17 @@
 		EB7429514297600EE9E31E3E /* OrganizedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2842EFBB0214DE65B4F0527F /* OrganizedWord.swift */; };
 		FE83E21B14E8A7390A5D747E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D9098737C473CDB93BB /* SceneDelegate.swift */; };
 		FE84045D578E07274599A4A3 /* img_card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8874022A1989963E0C70122A /* img_card.jpg */; };
+		LF01B001A1B2C3D4E5F60718 /* CalendarGateEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F001A1B2C3D4E5F60718 /* CalendarGateEvaluator.swift */; };
+		LF01B002A1B2C3D4E5F60718 /* DeferredLaunchCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F002A1B2C3D4E5F60718 /* DeferredLaunchCanvas.swift */; };
+		LF01B003A1B2C3D4E5F60718 /* LaunchDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F003A1B2C3D4E5F60718 /* LaunchDestination.swift */; };
+		LF01B004A1B2C3D4E5F60718 /* LaunchFlowResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F004A1B2C3D4E5F60718 /* LaunchFlowResolver.swift */; };
+		LF01B005A1B2C3D4E5F60718 /* LaunchFlowSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F005A1B2C3D4E5F60718 /* LaunchFlowSecrets.swift */; };
+		LF01B006A1B2C3D4E5F60718 /* LaunchSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F006A1B2C3D4E5F60718 /* LaunchSessionStore.swift */; };
+		LF01B007A1B2C3D4E5F60718 /* LaunchStagingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F007A1B2C3D4E5F60718 /* LaunchStagingState.swift */; };
+		LF01B008A1B2C3D4E5F60718 /* RemoteEntryProbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F008A1B2C3D4E5F60718 /* RemoteEntryProbe.swift */; };
+		LF01B009A1B2C3D4E5F60718 /* RemoteEntryURLComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F009A1B2C3D4E5F60718 /* RemoteEntryURLComposer.swift */; };
+		LF01B00AA1B2C3D4E5F60718 /* RootWindowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F00AA1B2C3D4E5F60718 /* RootWindowPresenter.swift */; };
+		LF01B00BA1B2C3D4E5F60718 /* WebDocumentSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = LF01F00BA1B2C3D4E5F60718 /* WebDocumentSurfaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +91,17 @@
 		EA1AA50CCADA68F024902DC9 /* Pods-311CogniloomReadify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-311CogniloomReadify.debug.xcconfig"; path = "Target Support Files/Pods-311CogniloomReadify/Pods-311CogniloomReadify.debug.xcconfig"; sourceTree = "<group>"; };
 		EE128A36FE38A697665B3579 /* Pods_311CogniloomReadify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_311CogniloomReadify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A2B3C4D5E60718293A4B5C /* KeyboardSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardSupport.swift; sourceTree = "<group>"; };
+		LF01F001A1B2C3D4E5F60718 /* CalendarGateEvaluator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CalendarGateEvaluator.swift; sourceTree = "<group>"; };
+		LF01F002A1B2C3D4E5F60718 /* DeferredLaunchCanvas.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeferredLaunchCanvas.swift; sourceTree = "<group>"; };
+		LF01F003A1B2C3D4E5F60718 /* LaunchDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchDestination.swift; sourceTree = "<group>"; };
+		LF01F004A1B2C3D4E5F60718 /* LaunchFlowResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchFlowResolver.swift; sourceTree = "<group>"; };
+		LF01F005A1B2C3D4E5F60718 /* LaunchFlowSecrets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchFlowSecrets.swift; sourceTree = "<group>"; };
+		LF01F006A1B2C3D4E5F60718 /* LaunchSessionStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchSessionStore.swift; sourceTree = "<group>"; };
+		LF01F007A1B2C3D4E5F60718 /* LaunchStagingState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchStagingState.swift; sourceTree = "<group>"; };
+		LF01F008A1B2C3D4E5F60718 /* RemoteEntryProbe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RemoteEntryProbe.swift; sourceTree = "<group>"; };
+		LF01F009A1B2C3D4E5F60718 /* RemoteEntryURLComposer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RemoteEntryURLComposer.swift; sourceTree = "<group>"; };
+		LF01F00AA1B2C3D4E5F60718 /* RootWindowPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootWindowPresenter.swift; sourceTree = "<group>"; };
+		LF01F00BA1B2C3D4E5F60718 /* WebDocumentSurfaceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebDocumentSurfaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +279,7 @@
 			children = (
 				41F6E0428A1407371CAF9618 /* AppDelegate.swift */,
 				79885D9098737C473CDB93BB /* SceneDelegate.swift */,
+				LF01G000A1B2C3D4E5F60718 /* LaunchFlow */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -311,6 +334,24 @@
 				2C61C853700B5BAD9FF8C3AA /* 311CogniloomReadify.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		LF01G000A1B2C3D4E5F60718 /* LaunchFlow */ = {
+			isa = PBXGroup;
+			children = (
+				LF01F001A1B2C3D4E5F60718 /* CalendarGateEvaluator.swift */,
+				LF01F002A1B2C3D4E5F60718 /* DeferredLaunchCanvas.swift */,
+				LF01F003A1B2C3D4E5F60718 /* LaunchDestination.swift */,
+				LF01F004A1B2C3D4E5F60718 /* LaunchFlowResolver.swift */,
+				LF01F005A1B2C3D4E5F60718 /* LaunchFlowSecrets.swift */,
+				LF01F006A1B2C3D4E5F60718 /* LaunchSessionStore.swift */,
+				LF01F007A1B2C3D4E5F60718 /* LaunchStagingState.swift */,
+				LF01F008A1B2C3D4E5F60718 /* RemoteEntryProbe.swift */,
+				LF01F009A1B2C3D4E5F60718 /* RemoteEntryURLComposer.swift */,
+				LF01F00AA1B2C3D4E5F60718 /* RootWindowPresenter.swift */,
+				LF01F00BA1B2C3D4E5F60718 /* WebDocumentSurfaceView.swift */,
+			);
+			path = LaunchFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +475,17 @@
 				D95411C8FA28013992B64771 /* OnboardingView.swift in Sources */,
 				60F856A129A41124B88DE2E3 /* SettingsView.swift in Sources */,
 				B4D5E6F708192A3B4C5D6E7F /* StatisticsView.swift in Sources */,
+				LF01B001A1B2C3D4E5F60718 /* CalendarGateEvaluator.swift in Sources */,
+				LF01B002A1B2C3D4E5F60718 /* DeferredLaunchCanvas.swift in Sources */,
+				LF01B003A1B2C3D4E5F60718 /* LaunchDestination.swift in Sources */,
+				LF01B004A1B2C3D4E5F60718 /* LaunchFlowResolver.swift in Sources */,
+				LF01B005A1B2C3D4E5F60718 /* LaunchFlowSecrets.swift in Sources */,
+				LF01B006A1B2C3D4E5F60718 /* LaunchSessionStore.swift in Sources */,
+				LF01B007A1B2C3D4E5F60718 /* LaunchStagingState.swift in Sources */,
+				LF01B008A1B2C3D4E5F60718 /* RemoteEntryProbe.swift in Sources */,
+				LF01B009A1B2C3D4E5F60718 /* RemoteEntryURLComposer.swift in Sources */,
+				LF01B00AA1B2C3D4E5F60718 /* RootWindowPresenter.swift in Sources */,
+				LF01B00BA1B2C3D4E5F60718 /* WebDocumentSurfaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -459,7 +511,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.frd.c0gn1lr6df;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -479,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -490,7 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.frd.c0gn1lr6df;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

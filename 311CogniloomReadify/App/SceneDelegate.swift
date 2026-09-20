@@ -3,16 +3,14 @@ import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    private var launchFlowResolver: LaunchFlowResolver?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        let root = UIHostingController(rootView: ContentView())
-        root.view.backgroundColor = UIColor(named: "AppBackground") ?? UIColor.black
-        window.backgroundColor = UIColor(named: "AppBackground") ?? UIColor.black
-        window.rootViewController = root
-        self.window = window
-        window.makeKeyAndVisible()
+        window = UIWindow(windowScene: windowScene)
+        launchFlowResolver = LaunchFlowResolver(window: window)
+        window?.rootViewController = launchFlowResolver?.resolveEntryViewController()
+        window?.makeKeyAndVisible()
         handleIncomingURLs(connectionOptions.urlContexts)
     }
 
